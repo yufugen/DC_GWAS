@@ -5,9 +5,7 @@ args = commandArgs(trailingOnly=TRUE)
 ### SET PARAMETERS
 
 MAIN_PATH = "./gwas_res_STAN"
-
 SRC_PATH =  "./src_stan"
-
 OUTPUT_PATH = "./res"
 USE_THESE_PACKAGES <- c("logger","tidyverse", "rstan", "readr", "ggplot2")
 
@@ -17,18 +15,20 @@ CHECK_CONVERGENCE = TRUE
 
 TRAIT = args[1]
 
+CHR_TYPE = "X"
+
 NO_COMPO = "M4"
 ALPHA = sqrt(2) # expected ratio of sex specific effect size
 n.iter <- 4000
 n.warmup <- 2000
 
 master_seed = 365
+options(mc.cores = parallel::detectCores())
 
 ###############################################################################
 ### IMPORT PACKAGES
 
 new_packages <- USE_THESE_PACKAGES[!(USE_THESE_PACKAGES %in% installed.packages()[,"Package"])]
-
 if(length(new_packages)){
   install.packages(new_packages)
   sapply(USE_THESE_PACKAGES, require, character.only = TRUE)
@@ -38,10 +38,7 @@ if(length(new_packages)){
 
 ###############################################################################
 ### LOAD THE MODEL
-# load the stan model base on the model argument
-# model_1: increase effect
-# model_2: decrease effect
-# model_3: converge to the mean effect
+# load the stan model
 XCI_model <- stan_model(file = sprintf("%s/sex_bias_model.stan", SRC_PATH))
 
 ###############################################################################
