@@ -58,16 +58,6 @@ dat <- filter(gwas_res, CHR == 23)
 
 log_info("execute_analysis: The dataset includes {nrow(dat)} SNPs for CHR {CHR_TYPE}.")
 
-# remove overlapping SNPs
-duplicate_SNP <- dat$SNP[duplicated(dat$SNP)]
-
-if(length(duplicate_SNP) == 0){
-  message("There is no duplicated SNPs.")
-} else{
-  dat <- dat %>%
-    filter(!SNP %in% duplicate_SNP)
-  message(sprintf("After remove duplicated SNPs, %s variants remaining.", nrow(dat)))
-}
 
 ###############################################################################
 ### PREPARE DATA
