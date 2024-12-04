@@ -20,7 +20,7 @@ res.m <- fread(Sys.glob(file.path(input.dir,
 res.c <- fread(Sys.glob(file.path(input.dir, 
                                   sprintf("BOLT_sex_combined*%s.bgen.stats.gz", trait))))
 
-select_vars <- read.table("./src_stan/full_chr_qc_ld_table_noMHC.txt", header=FALSE)
+select_vars <- read.table("./data/full_chr_qc_ld_table_noMHC.txt", header=FALSE)
 
 female_vars <- subset(res.f, SNP %in% select_vars[,1]) %>%
   select(SNP, CHR, BP, ALLELE1, ALLELE0, A1FREQ, BETA, SE, P_BOLT_LMM_INF)%>%

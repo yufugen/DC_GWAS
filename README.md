@@ -15,6 +15,10 @@ We used GENetic Effect-Size distribution Inference from Summary-level data ([GEN
 
 ### LD blocks in chrX and autosomes
 
+We partitioned LD blocks for the X chromosome, non-PAR, PAR1, and PAR2, separately. The partition was performed with [LAVA partitioning algorithm](https://github.com/cadeleeuw/lava-partitioning/) using 1000 Genomes (EUR) data. Female data were used when performing LD partition in non-PAR, and both sexes were used for LD partition in PAR. Data in plink format avaiable in `LD_partition/data`.
+
+The autosomal LD blocks were the original blocks created for [LAVA](https://github.com/josefin-werme/lava) and downloaded from [here](https://github.com/cadeleeuw/lava-partitioning/). The full LD blocks (autosomes + X chromosome) can be found in `LD_partition/res/locdef.locfile.eur.complete.par1.par2`.
+
 ### Four-component sex bias mixture model of genome-wide variants
 
 Bayesian mixutre model to estimate proportion of sex-biased variants and identify sex-biased variants using GWAS summary statistics of quantitative traits.

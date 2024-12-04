@@ -58,7 +58,7 @@ dat <- filter(gwas_res, CHR %in% 1:22)
 if(BIOBANK == "UKB"){
   dat$VAR <- paste(dat$CHR, dat$BP, dat$ALLELE0, dat$ALLELE1, dat$SNP,
                    sep = ":")
-  LD_group <- read.table(sprintf("%s/chr1-22_noMHC_variant_rsid_pos_info_LDgroup.txt", SRC_PATH),
+  LD_group <- read.table("./data/chr1-22_noMHC_variant_rsid_pos_info_LDgroup.txt", 
                          header = TRUE)
   LD_group$VAR1 <- paste(LD_group$chr, LD_group$posBP, LD_group$ref, LD_group$alt, LD_group$rsid,
                          sep = ":")
@@ -79,7 +79,7 @@ if(BIOBANK == "UKB"){
 } else if(BIOBANK == "FinnGen"){
   dat$VAR <- paste(dat$CHR, dat$BP, dat$ALLELE0, dat$ALLELE1,
                    sep = ":")
-  LD_group <- read.table(sprintf("%s/chr1-22_noMHC_variant_rsid_pos_info_LDgroup_GRCh38.txt", SRC_PATH),
+  LD_group <- read.table("./data/chr1-22_noMHC_variant_rsid_pos_info_LDgroup_GRCh38.txt",
                          header = TRUE)
   LD_group$VAR1 <- paste(LD_group$chr, LD_group$posBP, LD_group$ref, LD_group$alt,
                          sep = ":")
