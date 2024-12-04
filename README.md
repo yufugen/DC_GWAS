@@ -1,6 +1,6 @@
 # Role of chromosome X and dosage compensation mechanisms in complex trait genetics
 
-Provided below are resources and scripts used in "Interpreting dosage compensation through complex trait genome-wide associations".
+Provided below are resources and scripts used in "Role of chromosome X and dosage compensation mechanisms in complex trait genetics".
 
 ## Resources
 
