@@ -16,3 +16,7 @@ We used GENetic Effect-Size distribution Inference from Summary-level data ([GEN
 ### LD blocks in chrX and autosomes
 
 ### Four-component sex bias mixture model of genome-wide variants
+
+Bayesian mixutre model to estimate proportion of sex-biased variants and identify sex-biased variants using GWAS summary statistics of quantitative traits.
+
+The model relies on [`rstan`](https://mc-stan.org/users/interfaces/rstan).
